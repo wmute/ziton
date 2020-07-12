@@ -1,0 +1,11 @@
+*.db
+*.so
+*.pyc
+.vscode/settings.json
+fastindex/CMakeFiles/*
+fastindex/cmake_install.cmake
+fastindex/CMakeCache.txt
+fastindex/fastindex
+fastindex/Makefile
+.vscode/settings.json
+.vscode/settings.json

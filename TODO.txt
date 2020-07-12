@@ -1,0 +1,5 @@
+// TODO implement live file watching with watchman/pywatchman
+// TODO remove print statements with logging
+// TODO add excluded directory option to limit number of inotify threads
+
+// FIXME: regular database update and live monitoring can intersect in bad ways
