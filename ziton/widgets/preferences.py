@@ -3,8 +3,7 @@ Widget that represents the preferences submenu.
 """
 from PySide2.QtCore import QFile, Qt
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtWidgets import (QCheckBox, QListWidget, QListWidgetItem,
-                               QPushButton)
+from PySide2.QtWidgets import QCheckBox, QListWidget, QListWidgetItem, QPushButton
 
 import ziton.config as cfg
 
@@ -26,7 +25,9 @@ class PreferenceDialog:
         self.exluded_live_dirs = self.window.findChild(QListWidget, "excluded_dirs")
         self.update_startup_box = self.window.findChild(QCheckBox, "update_startup_box")
         self.live_indexing_box = self.window.findChild(QCheckBox, "live_indexing_box")
-        self.hidden_indexing_box = self.window.findChild(QCheckBox, "hidden_indexing_box")
+        self.hidden_indexing_box = self.window.findChild(
+            QCheckBox, "hidden_indexing_box"
+        )
         self.save_btn = self.window.findChild(QPushButton, "save_btn")
         self.close_btn = self.window.findChild(QPushButton, "close_btn")
         # signals
@@ -70,6 +71,7 @@ class PreferenceDialog:
             "live_updates": self.live_indexing_box.isChecked(),
             "hidden_files": self.hidden_indexing_box.isChecked(),
             "database_path": cfg.database_path(),
+            "excluded": cfg.excluded_files(),
         }
         cfg.save_configuration(current_config)
         # close the dialog
