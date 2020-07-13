@@ -9,3 +9,6 @@ fastindex/fastindex
 fastindex/Makefile
 .vscode/settings.json
 .vscode/settings.json
+build/
+dist/
+__main__.spec

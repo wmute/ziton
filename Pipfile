@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pyside2 = "*"
 toml = "*"
+pyinstaller = "*"
 
 [dev-packages]
 pylint = "*"
