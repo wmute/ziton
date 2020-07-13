@@ -7,11 +7,10 @@ from PySide2.QtCore import QCoreApplication, QThread, Signal
 from PySide2.QtGui import QIcon
 from PySide2.QtWidgets import QMenu, QMenuBar
 
-from .. import database as db
 from .. import TRASH_ICON
+from .. import database as db
 from .icon_provider import IconProvider
 from .preferences import PreferenceDialog
-
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)

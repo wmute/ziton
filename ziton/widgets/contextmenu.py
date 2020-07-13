@@ -10,9 +10,8 @@ from PySide2.QtGui import QIcon
 from PySide2.QtSql import QSqlQuery
 from PySide2.QtWidgets import QAction, QMenu
 
-
-from .. import database as db
 from .. import FOLDER_ICON_PATH, TRASH_ICON
+from .. import database as db
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)

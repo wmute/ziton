@@ -10,12 +10,8 @@ import sqlite3
 import time
 from dataclasses import dataclass
 
-from .config import (
-    database_path,
-    included_directories,
-    hidden_files_enabled,
-    excluded_files,
-)
+from .config import (database_path, excluded_files, hidden_files_enabled,
+                     included_directories)
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)

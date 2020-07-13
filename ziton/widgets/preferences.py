@@ -3,11 +3,12 @@ Widget that represents the preferences submenu.
 """
 from PySide2.QtCore import QFile, Qt
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtWidgets import QCheckBox, QListWidget, QListWidgetItem, QPushButton
-
-from .. import config as cfg
+from PySide2.QtWidgets import (QCheckBox, QListWidget, QListWidgetItem,
+                               QPushButton)
 
 from .. import PREFERENCES_PATH
+from .. import config as cfg
+
 
 class PreferenceDialog:
     "Represents the settings dialog."

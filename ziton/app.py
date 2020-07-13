@@ -9,14 +9,12 @@ from PySide2.QtGui import QIcon
 from PySide2.QtSql import QSqlDatabase
 from PySide2.QtWidgets import QApplication, QLineEdit, QVBoxLayout, QWidget
 
+from . import LOGO_PATH, STYLESHEET_PATH
 from . import monitor as monitor
 from .config import database_path, included_directories, is_indexing_enabled
 from .widgets.entries_trayicon import TrayEntryInfo
 from .widgets.menubar import Menubar
 from .widgets.tableview import Tableview
-
-from . import STYLESHEET_PATH, LOGO_PATH
-
 
 # TODO: Iron out bugs in live file monitoring, implement file deletion signal
 
