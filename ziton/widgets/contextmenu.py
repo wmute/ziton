@@ -10,6 +10,7 @@ from PySide2.QtGui import QIcon
 from PySide2.QtSql import QSqlQuery
 from PySide2.QtWidgets import QAction, QMenu
 
+from ziton import FOLDER_ICON_PATH, TRASH_ICON
 import ziton.database as db
 
 logging.basicConfig(level=logging.INFO)
@@ -24,19 +25,13 @@ class RightClickMenu(QMenu):
         self.filepath = filepath
         self.position = position
         # open parent folder of file
-        self.open_action = QAction(
-            QIcon("./ziton/resources/icons/folder.png"), "Open Folder"
-        )
+        self.open_action = QAction(QIcon(FOLDER_ICON_PATH), "Open Folder")
         self.open_action.triggered.connect(self.open_selected_folder)
         # delete selected file
-        self.delete_action = QAction(
-            QIcon("./ziton/resources/icons/trash.png"), "Delete File"
-        )
+        self.delete_action = QAction(QIcon(TRASH_ICON), "Delete File")
         self.delete_action.triggered.connect(self.delete_file)
         # add file to bookmark
-        self.bookmark_action = QAction(
-            QIcon("./ziton/resources/icons/folder.png"), "Add Bookmark"
-        )
+        self.bookmark_action = QAction(QIcon(FOLDER_ICON_PATH), "Add Bookmark")
         self.bookmark_action.triggered.connect(self.bookmark_file)
         self.addAction(self.open_action)
         self.addAction(self.delete_action)

@@ -2,16 +2,16 @@
 Widget that represents the menubar.
 """
 import logging
-import pathlib
 
 from PySide2.QtCore import QCoreApplication, QThread, Signal
 from PySide2.QtGui import QIcon
 from PySide2.QtWidgets import QMenu, QMenuBar
 
 import ziton.database as db
-from ziton.config import database_path
 from ziton.widgets.icon_provider import IconProvider
 from ziton.widgets.preferences import PreferenceDialog
+
+from ziton import TRASH_ICON
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
@@ -27,7 +27,6 @@ class Worker(QThread):
         super().__init__(parent)
 
     def run(self):
-        path = pathlib.PosixPath(database_path())
         db.build_database()
         self.parent().update_finished()
         LOGGER.info("db update finished!")
@@ -60,7 +59,7 @@ class Menubar(QMenuBar):
         self.populate_bookmark_menu()
         self.bookmark_menu.addSeparator()
         self.bookmark_menu.addAction(
-            QIcon("ziton/resources/icons/trash.png"),
+            QIcon(TRASH_ICON),
             "Delete Bookmarks",
             self.delete_bookmarks_clicked,
         )

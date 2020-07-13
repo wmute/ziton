@@ -7,6 +7,8 @@ from PySide2.QtWidgets import QCheckBox, QListWidget, QListWidgetItem, QPushButt
 
 import ziton.config as cfg
 
+from ziton import PREFERENCES_PATH
+
 
 class PreferenceDialog:
     "Represents the settings dialog."
@@ -14,7 +16,7 @@ class PreferenceDialog:
     def __init__(self):
         "inits the settingsd dialog."
         # load ui file
-        ui_file = QFile("./ziton/resources/ui/preferences.ui")
+        ui_file = QFile(PREFERENCES_PATH)
         ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.window = loader.load(ui_file)

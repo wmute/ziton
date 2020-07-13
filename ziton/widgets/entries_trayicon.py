@@ -8,6 +8,7 @@ from PySide2.QtWidgets import (QHBoxLayout, QLabel, QSizePolicy, QSpacerItem,
                                QWidget)
 
 from ziton.database import number_of_rows
+from ziton import DATABASE_ICON
 
 
 class TrayEntryInfo(QWidget):
@@ -21,7 +22,7 @@ class TrayEntryInfo(QWidget):
         self.db_icon_label = QLabel()
         self.db_icon_label.setMaximumSize(16, 16)
         self.db_icon_label.setText("")
-        self.db_icon_label.setPixmap(QPixmap("resources/database.png"))
+        self.db_icon_label.setPixmap(QPixmap(DATABASE_ICON))
         self.db_icon_label.setScaledContents(True)
         # label for file count
         self.filecount = QLabel()

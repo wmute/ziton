@@ -10,13 +10,16 @@ from PySide2.QtSql import QSqlDatabase
 from PySide2.QtWidgets import QApplication, QLineEdit, QVBoxLayout, QWidget
 
 import ziton.monitor as monitor
-from ziton.config import (database_path, included_directories,
-                          is_indexing_enabled)
+from ziton.config import database_path, included_directories, is_indexing_enabled
 from ziton.widgets.entries_trayicon import TrayEntryInfo
 from ziton.widgets.menubar import Menubar
 from ziton.widgets.tableview import Tableview
 
+from . import STYLESHEET_PATH, LOGO_PATH
+
+
 # TODO: Iron out bugs in live file monitoring, implement file deletion signal
+
 
 class Mainwindow(QWidget):
     """Central widget and entrypoint for the program."""
@@ -84,13 +87,13 @@ class Mainwindow(QWidget):
 def main():
     "program entrypoint."
     included_directories()
-    with open("./ziton/resources/stylesheet.qss", "r") as infile:
+    with open(STYLESHEET_PATH, "r") as infile:
         stylesheet = infile.read()
 
     QCoreApplication.setAttribute(Qt.AA_ShareOpenGLContexts)
     app = QApplication(sys.argv)
     app.setStyleSheet(stylesheet)
-    app.setWindowIcon(QIcon("./ziton/resources/logo.png"))
+    app.setWindowIcon(QIcon(str(LOGO_PATH)))
     app.setApplicationDisplayName("Ziton")
 
     widget = Mainwindow()
