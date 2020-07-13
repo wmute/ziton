@@ -49,14 +49,14 @@
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_3">
+        <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>200</width>
-           <height>200</height>
+           <width>20</width>
+           <height>40</height>
           </size>
          </property>
         </spacer>
@@ -144,7 +144,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QListWidget" name="listWidget"/>
+            <widget class="QListWidget" name="excluded_files"/>
            </item>
           </layout>
          </item>
