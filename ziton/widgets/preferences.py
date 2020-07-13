@@ -5,10 +5,9 @@ from PySide2.QtCore import QFile, Qt
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QCheckBox, QListWidget, QListWidgetItem, QPushButton
 
-import ziton.config as cfg
+from .. import config as cfg
 
-from ziton import PREFERENCES_PATH
-
+from .. import PREFERENCES_PATH
 
 class PreferenceDialog:
     "Represents the settings dialog."

@@ -10,9 +10,9 @@ from PySide2.QtCore import QItemSelectionModel, Qt, Signal, Slot
 from PySide2.QtSql import QSqlTableModel
 from PySide2.QtWidgets import QAbstractItemView, QHeaderView, QTableView
 
-from ziton.database import dbrecord_from_path
-from ziton.widgets.contextmenu import RightClickMenu
-from ziton.widgets.icon_provider import IconProvider
+from ..database import dbrecord_from_path
+from .contextmenu import RightClickMenu
+from .icon_provider import IconProvider
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)

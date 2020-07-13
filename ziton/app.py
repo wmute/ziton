@@ -9,11 +9,11 @@ from PySide2.QtGui import QIcon
 from PySide2.QtSql import QSqlDatabase
 from PySide2.QtWidgets import QApplication, QLineEdit, QVBoxLayout, QWidget
 
-import ziton.monitor as monitor
-from ziton.config import database_path, included_directories, is_indexing_enabled
-from ziton.widgets.entries_trayicon import TrayEntryInfo
-from ziton.widgets.menubar import Menubar
-from ziton.widgets.tableview import Tableview
+from . import monitor as monitor
+from .config import database_path, included_directories, is_indexing_enabled
+from .widgets.entries_trayicon import TrayEntryInfo
+from .widgets.menubar import Menubar
+from .widgets.tableview import Tableview
 
 from . import STYLESHEET_PATH, LOGO_PATH
 

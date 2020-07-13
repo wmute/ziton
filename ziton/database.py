@@ -10,7 +10,7 @@ import sqlite3
 import time
 from dataclasses import dataclass
 
-from ziton.config import (
+from .config import (
     database_path,
     included_directories,
     hidden_files_enabled,

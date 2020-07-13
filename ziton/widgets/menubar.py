@@ -7,11 +7,11 @@ from PySide2.QtCore import QCoreApplication, QThread, Signal
 from PySide2.QtGui import QIcon
 from PySide2.QtWidgets import QMenu, QMenuBar
 
-import ziton.database as db
-from ziton.widgets.icon_provider import IconProvider
-from ziton.widgets.preferences import PreferenceDialog
+from .. import database as db
+from .. import TRASH_ICON
+from .icon_provider import IconProvider
+from .preferences import PreferenceDialog
 
-from ziton import TRASH_ICON
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)

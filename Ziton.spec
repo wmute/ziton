@@ -3,10 +3,10 @@
 block_cipher = None
 
 
-a = Analysis(['ziton/gui.py'],
+a = Analysis(['main.py'],
              pathex=['/home/wintermute/Development/ziton'],
              binaries=[],
-             datas=[('ziton/resources', '.')],
+             datas=[('ziton/resources', 'ziton/resources')],
              hiddenimports=['PySide2.QtXml'],
              hookspath=[],
              runtime_hooks=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False , icon='resources/logo.png')
+          console=False , icon='ziton/resources/logo.png')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,

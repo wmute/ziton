@@ -4,11 +4,11 @@ Widget that represents the main view's info tray.
 
 from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap
-from PySide2.QtWidgets import (QHBoxLayout, QLabel, QSizePolicy, QSpacerItem,
-                               QWidget)
+from PySide2.QtWidgets import QHBoxLayout, QLabel, QSizePolicy, QSpacerItem, QWidget
 
-from ziton.database import number_of_rows
-from ziton import DATABASE_ICON
+from ..database import number_of_rows
+
+from .. import DATABASE_ICON
 
 
 class TrayEntryInfo(QWidget):

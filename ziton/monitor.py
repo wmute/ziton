@@ -8,7 +8,7 @@ from distutils.spawn import find_executable
 
 from PySide2.QtCore import QThread, Signal
 
-from ziton.config import included_directories
+from .config import included_directories
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
