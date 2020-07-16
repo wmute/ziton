@@ -35,6 +35,7 @@ def build_database():
     LOGGER.info("Complete database rebuild...(python backend)")
     start_time = time.time()
     ex = excluded_files()
+    print(ex)
 
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
@@ -49,7 +50,7 @@ def build_database():
     for directory in directories:
         for root, dirs, files in os.walk(directory, topdown=True):
             if not check_hidden:
-                files = [f for f in files if not f[0] == "." and f not in ex]
+                files[:] = [f for f in files if not f[0] == "." and f not in ex]
                 dirs[:] = [d for d in dirs if not d[0] == "." and d not in ex]
             # iterate over files
             for fil in files:

@@ -2,13 +2,15 @@
 Widget that represents the preferences submenu.
 """
 from PySide2.QtCore import QFile, Qt
+from PySide2.QtGui import QIcon
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QCheckBox, QListWidget, QListWidgetItem, QPushButton
 
 from .. import PREFERENCES_PATH
+from .. import ADD_ICON_PATH
 from .. import config as cfg
+from .. import REMOVE_ICON_PATH
 
-# TODO excluded directory seems to be buggy
 
 class PreferenceDialog:
     "Represents the settings dialog."
@@ -35,6 +37,11 @@ class PreferenceDialog:
         )
         self.save_btn = self.window.findChild(QPushButton, "save_btn")
         self.close_btn = self.window.findChild(QPushButton, "close_btn")
+        # set button icons
+        self.add_item_btn.setIcon(QIcon(ADD_ICON_PATH))
+        self.remove_item_btn.setIcon(QIcon(REMOVE_ICON_PATH))
+        self.excluded_add_btn.setIcon(QIcon(ADD_ICON_PATH))
+        self.excluded_rm_btn.setIcon(QIcon(REMOVE_ICON_PATH))
         # signals
         self.add_item_btn.clicked.connect(self.insert_row)
         self.remove_item_btn.clicked.connect(self.remove_selected)
